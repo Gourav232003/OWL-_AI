@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block title %}Owl AI - About{% endblock %}
+
+{% block content %}
+<div class="about-container">
+    <div class="about-header">
+        <div class="about-icon">🦉</div>
+        <h1>About Owl AI</h1>
+    </div>
+    
+    <div class="about-content">
+        <section class="about-section">
+            <h2>Our Mission</h2>
+            <p>Owl AI is designed to be your intelligent companion, providing wise and helpful assistance whenever you need it. Like the owl, known for its wisdom and keen perception, our AI aims to offer thoughtful, insightful responses to help you navigate your questions and tasks.</p>
+        </section>
+        
+        <section class="about-section">
+            <h2>What We Offer</h2>
+            <div class="offerings-grid">
+                <div class="offering-card">
+                    <h3>🤖 AI-Powered Conversations</h3>
+                    <p>Engage in natural, flowing conversations with our intelligent assistant.</p>
+                </div>
+                <div class="offering-card">
+                    <h3>🔒 Privacy Focused</h3>
+                    <p>Your conversations are handled with care and respect for your privacy.</p>
+                </div>
+                <div class="offering-card">
+                    <h3>🌐 Accessible Anywhere</h3>
+                    <p>Access Owl AI from any device with an internet connection.</p>
+                </div>
+                <div class="offering-card">
+                    <h3>📚 Continuous Learning</h3>
+                    <p>Our AI is constantly improving to serve you better.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="about-section">
+            <h2>Technology</h2>
+            <p>Owl AI is built with modern web technologies to ensure a smooth and responsive experience:</p>
+            <ul class="tech-list">
+                <li><strong>Flask</strong> - A lightweight Python web framework</li>
+                <li><strong>HTML5 & CSS3</strong> - Modern, responsive design</li>
+                <li><strong>Jinja2</strong> - Powerful templating engine</li>
+            </ul>
+        </section>
+        
+        <div class="cta-section">
+            <h2>Ready to Get Started?</h2>
+            <p>Experience the wisdom of Owl AI for yourself!</p>
+            <a href="{{ url_for('chat') }}" class="btn btn-primary btn-large">Start Chatting Now</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
