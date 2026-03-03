@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block title %}Owl AI - Chat{% endblock %}
+
+{% block content %}
+<div class="chat-container">
+    <div class="chat-header">
+        <h2>🦉 Chat with Owl AI</h2>
+        <a href="{{ url_for('clear') }}" class="btn btn-small btn-danger">Clear Chat</a>
+    </div>
+    
+    <div class="chat-messages" id="chatMessages">
+        {% if not messages %}
+            <div class="welcome-message">
+                <div class="welcome-icon">🦉</div>
+                <p>Hello! I'm Owl AI. How can I assist you today?</p>
+                <p class="hint">Try saying "Hello" or asking a question!</p>
+            </div>
+        {% else %}
+            {% for msg in messages %}
+                <div class="message {{ msg.role }}">
+                    <div class="message-avatar">
+                        {% if msg.role == 'user' %}👤{% else %}🦉{% endif %}
+                    </div>
+                    <div class="message-content">
+                        <div class="message-role">{{ 'You' if msg.role == 'user' else 'Owl AI' }}</div>
+                        <div class="message-text">{{ msg.content }}</div>
+                    </div>
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+    
+    <form class="chat-input-form" method="POST" action="{{ url_for('chat') }}">
+        <div class="input-group">
+            <input 
+                type="text" 
+                name="message" 
+                class="chat-input" 
+                placeholder="Type your message here..." 
+                autocomplete="off"
+                autofocus
+            >
+            <button type="submit" class="btn btn-send">
+                <span>Send</span>
+                <span class="send-icon">➤</span>
+            </button>
+        </div>
+    </form>
+</div>
+
+<script>
+    // Auto-scroll to bottom of chat
+    const chatMessages = document.getElementById('chatMessages');
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+</script>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}Owl AI - Home{% endblock %}
+
+{% block content %}
+<div class="hero-section">
+    <div class="hero-content">
+        <div class="hero-icon">🦉</div>
+        <h1 class="hero-title">Welcome to Owl AI</h1>
+        <p class="hero-subtitle">Your intelligent assistant, wise and always ready to help</p>
+        <div class="hero-buttons">
+            <a href="{{ url_for('chat') }}" class="btn btn-primary">Start Chatting</a>
+            <a href="{{ url_for('about') }}" class="btn btn-secondary">Learn More</a>
+        </div>
+    </div>
+</div>
+
+<section class="features-section">
+    <h2 class="section-title">Features</h2>
+    <div class="features-grid">
+        <div class="feature-card">
+            <div class="feature-icon">💬</div>
+            <h3>Interactive Chat</h3>
+            <p>Engage in natural conversations with our AI assistant</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🎯</div>
+            <h3>Smart Responses</h3>
+            <p>Get intelligent, context-aware answers to your questions</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">⚡</div>
+            <h3>Fast & Reliable</h3>
+            <p>Quick responses with a user-friendly interface</p>
+        </div>
+    </div>
+</section>
+{% endblock %}
